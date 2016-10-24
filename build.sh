@@ -1,3 +1,8 @@
 #!/bin/bash
 
-/usr/bin/dotnet
+set -e -u -x
+
+pushd agileviews/src/AgileViews
+dotnet restore
+dotnet build
+popd
