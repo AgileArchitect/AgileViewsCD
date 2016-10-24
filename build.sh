@@ -4,6 +4,6 @@ set -e -u -x
 
 echo $PWD
 
-#cd agileviews/src/AgileViews
+# cd agileviews/src/AgileViews
 #dotnet restore
 #dotnet build
