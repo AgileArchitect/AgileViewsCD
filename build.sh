@@ -2,6 +2,8 @@
 
 set -e -u -x
 
-cd agileviews/src/AgileViews
-dotnet restore
-dotnet build
+echo $PWD
+
+#cd agileviews/src/AgileViews
+#dotnet restore
+#dotnet build
