@@ -1,0 +1,31 @@
+resources:
+- name: agileviews
+  type: git
+  source: 
+    uri: https://github.com/AgileArchitect/AgileViews.git
+    branch: master
+- name: ci
+  type: git 
+  source: 
+    uri: https://github.com/AgileArchitect/AgileViewsCD.git
+    branch: master
+
+jobs:
+- name: build 
+  plan:
+  - get: ci
+  - get: agileviews
+    trigger: true
+  - task: build
+    config:
+      platform: linux
+      image_resource:
+         type: docker-image
+         source: 
+             repository: microsoft/dotnet
+             tag: 1.0.0-preview2-sdk
+      inputs:
+        - name: agileviews
+        - name: ci
+      run:
+         path: ./ci/build.sh
