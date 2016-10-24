@@ -1,9 +1,10 @@
 #!/bin/bash
 
-set -e -u -x
+/usr/bin/dotnet
+ls -la
 
-echo $PWD
-
-# cd agileviews/src/AgileViews
+#set -e -u -x
+#echo $PWD
+# pushd agileviews/src/AgileViews
 #dotnet restore
 #dotnet build
